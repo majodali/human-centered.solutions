@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="AI adoption, strategy and technology consulting, delivered in verifiable steps.">
+<title>Human-Centered Solutions</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Public+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a single reading column with a left-hand "ledger" rail; the hero is a staircase where every step ends in a check. */
+:root{
+  --bg:#f2f5f6; --surface:#ffffff; --ink:#14272b; --muted:#55696d; --line:#cdd8da;
+  --accent:#0d5c63; --accent-ink:#ffffff; --check:#b06a12; --tint:#e2ecec;
+  --display:"Bricolage Grotesque","Trebuchet MS",sans-serif;
+  --body:"Public Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1b1e; --surface:#16262a; --ink:#e6eeef; --muted:#9db0b3; --line:#2c4247;
+  --accent:#6cc5c9; --accent-ink:#0f1b1e; --check:#e6a64a; --tint:#1b3035; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1b1e; --surface:#16262a; --ink:#e6eeef; --muted:#9db0b3; --line:#2c4247;
+  --accent:#6cc5c9; --accent-ink:#0f1b1e; --check:#e6a64a; --tint:#1b3035; color-scheme:dark}
+
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body)}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:20px;padding-block:20px 64px;display:flex;flex-direction:column;gap:72px}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--check);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
+h1{font-size:clamp(2.2rem,6vw,4rem);font-weight:700;letter-spacing:-.02em}
+h2{font-size:clamp(1.6rem,3.6vw,2.3rem);font-weight:700}
+h3{font-size:1.2rem;font-weight:700}
+p{margin:0;max-width:65ch}
+.label{font:500 .75rem/1.2 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.todo{font:400 .8rem/1.4 var(--mono);color:var(--check);border:1px dashed var(--check);padding:2px 6px;border-radius:3px}
+
+header{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:baseline;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:16px}
+.brand{font:700 1.15rem var(--display);color:var(--ink);text-decoration:none}
+.brand span{color:var(--accent)}
+nav{display:flex;flex-wrap:wrap;gap:6px 20px}
+nav a{font-size:.95rem;color:var(--ink);text-decoration:none}
+nav a:hover{color:var(--accent);text-decoration:underline}
+
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end}
+.hero>div{min-width:0;display:flex;flex-direction:column;gap:22px}
+.lede{font-size:1.2rem;color:var(--muted)}
+.cta{align-self:flex-start;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;padding:12px 20px;border-radius:4px}
+.stairs{display:flex;flex-direction:column;gap:0}
+.stair{background:var(--surface);border:1px solid var(--line);padding:14px 16px;display:flex;flex-direction:column;gap:4px}
+.stair+.stair{margin-top:-1px}
+.stair:nth-child(1){margin-left:30%}.stair:nth-child(2){margin-left:15%}.stair:nth-child(3){margin-left:0}
+.stair b{font-family:var(--display)}
+.stair small{font:400 .8rem var(--mono);color:var(--check)}
+
+section{display:flex;flex-direction:column;gap:24px}
+.sechead{display:flex;flex-direction:column;gap:10px}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--ink)}
+.cols>div{min-width:0;padding:20px 20px 20px 0;display:flex;flex-direction:column;gap:10px;border-bottom:1px solid var(--line)}
+.cols>div+div{padding-left:20px;border-left:1px solid var(--line)}
+.cols p{font-size:.97rem;color:var(--muted)}
+.rows{display:flex;flex-direction:column;border-top:2px solid var(--ink)}
+.row{display:grid;grid-template-columns:220px 1fr;gap:8px 28px;padding:18px 0;border-bottom:1px solid var(--line)}
+.row>*{min-width:0}
+.row p{color:var(--muted);font-size:.97rem}
+.band{background:var(--tint);padding:32px 24px;border-radius:6px}
+ol.steps{margin:0;padding:0;list-style:none;counter-reset:s;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+ol.steps li{counter-increment:s;min-width:0;display:flex;flex-direction:column;gap:6px;font-size:.97rem;color:var(--muted)}
+ol.steps li::before{content:counter(s);font:700 1.6rem var(--display);color:var(--accent)}
+ol.steps b{color:var(--ink);font-family:var(--display);font-size:1.05rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font:400 .82rem var(--mono);border:1px solid var(--line);background:var(--surface);padding:4px 10px;border-radius:999px}
+footer{border-top:1px solid var(--line);padding-top:20px;color:var(--muted);font-size:.9rem;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+@media (max-width:760px){
+  .hero,.cols,.row{grid-template-columns:1fr}
+  .cols>div+div{padding-left:0;border-left:0}
+  ol.steps{grid-template-columns:1fr 1fr}
+  .stair:nth-child(1){margin-left:16%}.stair:nth-child(2){margin-left:8%}
+  .wrap{gap:52px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="brand" href="#top" id="top">human-centered<span>.solutions</span></a>
+  <nav aria-label="Sections">
+    <a href="#start">Where to start</a><a href="#services">Services</a><a href="#approach">Approach</a>
+    <a href="#insights">Insights</a><a href="#cases">Case studies</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div>
+    <span class="label">AI adoption · strategy · technology</span>
+    <h1>AI adoption your people can still steer.</h1>
+    <p class="lede">I help organizations adopt AI and new technology in steps. Each step ends in something you can verify and a result you can measure, so the people accountable for the work stay in command of it.</p>
+    <a class="cta" href="#contact">Book a conversation</a>
+  </div>
+  <div class="stairs" aria-label="Each step ends in a check">
+    <div class="stair"><b>Step 3: extend</b><span>Wider use, on proven ground</span><small>✓ verified · value measured</small></div>
+    <div class="stair"><b>Step 2: build</b><span>One workflow, in production</span><small>✓ verified · value measured</small></div>
+    <div class="stair"><b>Step 1: understand</b><span>Where you are, what is worth doing</span><small>✓ agreed in writing</small></div>
+  </div>
+</div>
+
+<section id="start">
+  <div class="sechead"><span class="label">Where to start</span><h2>Three common situations</h2></div>
+  <div class="cols">
+    <div><h3>We are getting started</h3><p>You want to use AI or modernize how you work, and you are unsure where the value is. We find the two or three uses that matter, and start with the smallest one that proves itself.</p></div>
+    <div><h3>Our pilots have not paid off</h3><p>You have demos and experiments, and little in daily use. We find out why they stalled, pick what deserves to continue, and take it to production with a measure of success agreed first.</p></div>
+    <div><h3>Our AI-built software is not holding together</h3><p>Agents produce a lot, and the project gets harder to understand and change. We restore the structure that lets your team explain, change and verify the system as it grows.</p></div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="sechead"><span class="label">Services</span><h2>What I do</h2>
+  <p>AI adoption is the lead. It rests on business analysis, strategy and engineering, which are also available on their own.</p></div>
+  <div class="rows">
+    <div class="row"><h3>AI adoption and maturity</h3><p>Strategy, use-case selection, solution design, rollout and team practices. For organizations of 10 to 100 people, from first use through reliable daily operation.</p></div>
+    <div class="row"><h3>AI-driven software delivery</h3><p>Process, planning and verification practices for teams building with coding agents, so large projects stay understandable and under control.</p></div>
+    <div class="row"><h3>Business and product strategy</h3><p>Analysis of how the organization works today, where it should go, and which changes will move it there. Facilitated with design thinking and systems thinking.</p></div>
+    <div class="row"><h3>Technical strategy and architecture</h3><p>Architecture, platform choices and digital transformation, including high-scale, resilient systems on AWS.</p></div>
+  </div>
+  <div class="cols">
+    <div><span class="label">Way to engage</span><h3>Diagnostic</h3><p>A short, fixed-scope review. You receive a written assessment and a recommended first step.</p></div>
+    <div><span class="label">Way to engage</span><h3>Advisory</h3><p>Ongoing guidance for leaders and teams while they carry out the work.</p></div>
+    <div><span class="label">Way to engage</span><h3>Workshops</h3><p>Working sessions that leave a team with a shared plan and the skills to follow it.</p></div>
+  </div>
+</section>
+
+<section id="approach" class="band">
+  <div class="sechead"><span class="label">Approach</span><h2>Why human-centered</h2>
+  <p>Technology projects fail when the people responsible for them can no longer explain what is happening or judge whether a change made things better. AI makes this easier to fall into, because it produces work faster than people can absorb it. Every engagement is built to keep that understanding intact.</p></div>
+  <ol class="steps">
+    <li><b>Understand</b>How the organization works now, in its own words.</li>
+    <li><b>Choose</b>One step small enough to check and valuable enough to matter.</li>
+    <li><b>Deliver</b>Build it, with the checks agreed before the work starts.</li>
+    <li><b>Measure</b>Compare the result with the goal, then decide the next step.</li>
+  </ol>
+</section>
+
+<section id="insights">
+  <div class="sechead"><span class="label">Insights</span><h2>Analysis and practice</h2>
+  <p>Essays and short field notes on AI adoption, with plain summaries of current research and industry analysis. <span class="todo">titles are working drafts; none published yet</span></p></div>
+  <div class="rows">
+    <div class="row"><span class="label">Essay · in preparation</span><div><h3>When AI projects lose their way</h3><p>Convergence: why productive-looking projects drift, and how to see it early.</p></div></div>
+    <div class="row"><span class="label">Essay · in preparation</span><div><h3>Adopting AI one measurable step at a time</h3><p>A step-wise path for small organizations, with what to measure at each stage.</p></div></div>
+    <div class="row"><span class="label">Essay · in preparation</span><div><h3>The cost of understanding</h3><p>What AI changes about who holds the knowledge of a system, and what to do about it.</p></div></div>
+    <div class="row"><span class="label">Series · planned</span><div><h3>An AI maturity guide for small organizations</h3><p>Stages, typical obstacles and the practices that move a team from one stage to the next.</p></div></div>
+  </div>
+</section>
+
+<section id="cases">
+  <div class="sechead"><span class="label">Case studies</span><h2>Work to date</h2></div>
+  <div class="rows">
+    <div class="row"><span class="label">AWS product team</span><div><h3>Introducing AI into software development</h3><p><span class="todo">to write: situation, what was done, results</span></p></div></div>
+    <div class="row"><span class="label">Higher-education startup</span><div><h3>Building an AI-powered product</h3><p><span class="todo">to write: situation, what was done, results</span></p></div></div>
+    <div class="row"><span class="label">Own projects</span><div><h3>Divergence and recovery in agent-built software</h3><p>A documented account from public repositories. <span class="todo">to write</span></p></div></div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="sechead"><span class="label">Experience</span><h2>Matthew <span class="todo">surname</span></h2>
+  <p>Software architect and engineer with more than 30 years of experience, and a former Principal Solutions Architect at Amazon Web Services. My work spans enterprise architecture, high-scale distributed systems, product development, and AI system design and adoption.</p></div>
+  <div class="chips" aria-label="AWS experience"><span>Amazon Bedrock</span><span>Amazon SageMaker</span><span class="todo">other AWS services and what was built with each</span></div>
+  <p><span class="todo">career history, selected engagements, certifications, links to GitHub and LinkedIn</span></p>
+</section>
+
+<section id="contact" class="band">
+  <div class="sechead"><span class="label">Contact</span><h2>Start with a conversation</h2>
+  <p>Tell me what you are trying to do and where it is stuck. The first conversation is free and takes 30 minutes.</p>
+  <p><span class="todo">contact email and booking link</span></p></div>
+</section>
+
+<footer><span>Human-Centered Solutions · Bainbridge Island, Washington</span><span>Draft for review</span></footer>
+</div>
+</body>
+</html>
