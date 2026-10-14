@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="AI adoption, strategy and technology consulting, delivered in verifiable steps.">
+<meta name="description" content="Strategy, technology and AI consulting that keeps your purpose in the lead and moves in verifiable steps.">
 <title>Human-Centered Solutions</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Public+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
@@ -43,7 +43,11 @@ nav a:hover{color:var(--accent);text-decoration:underline}
 
 .hero{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;background:var(--warm);padding:40px 28px;border-radius:8px}
 .hero>div{min-width:0;display:flex;flex-direction:column;gap:22px}
-.lede{font-size:1.2rem;color:var(--muted)}
+.lede{font-size:1.15rem;color:var(--muted)}
+.lede strong{color:var(--ink);font-weight:600}
+.tagline{font:700 clamp(1.2rem,2.6vw,1.6rem)/1.3 var(--display);color:var(--accent)}
+.fine{color:var(--muted);font-size:1rem;max-width:72ch;margin-top:-32px}
+.cols.four{grid-template-columns:repeat(4,1fr)}
 .cta{align-self:flex-start;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;padding:12px 20px;border-radius:4px}
 .stairs{display:flex;flex-direction:column;gap:0}
 .stair{background:var(--surface);border:1px solid var(--line);padding:14px 16px;display:flex;flex-direction:column;gap:4px}
@@ -72,7 +76,8 @@ ol.steps b{color:var(--ink);font-family:var(--display);font-size:1.05rem}
 .chips span{font:400 .82rem var(--mono);border:1px solid var(--line);background:var(--surface);padding:4px 10px;border-radius:999px}
 footer{border-top:1px solid var(--line);padding-top:20px;color:var(--muted);font-size:.9rem;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
 @media (max-width:760px){
-  .hero,.cols,.row{grid-template-columns:1fr}
+  .hero,.cols,.cols.four,.row{grid-template-columns:1fr}
+  .fine{margin-top:-16px}
   .cols>div+div{padding-left:0;border-left:0}
   ol.steps{grid-template-columns:1fr 1fr}
   .hero{padding:28px 18px}
@@ -86,24 +91,38 @@ footer{border-top:1px solid var(--line);padding-top:20px;color:var(--muted);font
 <header>
   <a class="brand" href="#top" id="top">human-centered<span>.solutions</span></a>
   <nav aria-label="Sections">
-    <a href="#start">Where to start</a><a href="#services">Services</a><a href="#approach">Approach</a>
+    <a href="#deliver">What I deliver</a><a href="#start">Where to start</a><a href="#services">Services</a><a href="#approach">Approach</a>
     <a href="#insights">Insights</a><a href="#cases">Case studies</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
   </nav>
 </header>
 
 <div class="hero">
   <div>
-    <span class="label">AI adoption · strategy · technology</span>
-    <h1>AI adoption your people can still steer.</h1>
-    <p class="lede">I help organizations adopt AI and new technology in steps. Each step ends in something you can verify and a result you can measure, so the people accountable for the work stay in command of it.</p>
+    <span class="label">Strategy · technology · AI</span>
+    <h1>Unlock your potential.</h1>
+    <p class="tagline">Your people. Your customers. Your technology.</p>
+    <p class="lede">When so much is changing, it matters more than ever to refocus on what stays the same: your purpose, and what you do for the people you serve.</p>
+    <p class="lede"><strong>Clarity first.</strong> Then the technology, AI included, that your purpose calls for.</p>
     <a class="cta" href="#contact">Book a conversation</a>
   </div>
-  <div class="stairs" aria-label="Each step ends in a check">
-    <div class="stair"><b>Step 3: extend</b><span>Wider use, on proven ground</span><small>✓ verified · value measured</small></div>
-    <div class="stair"><b>Step 2: build</b><span>One workflow, in production</span><small>✓ verified · value measured</small></div>
-    <div class="stair"><b>Step 1: understand</b><span>Where you are, what is worth doing</span><small>✓ agreed in writing</small></div>
+  <div class="stairs" aria-label="Three steps, each ending in verified progress">
+    <div class="stair"><b>Grow</b><span>Extend what works, on proven ground</span><small>✓ progress verified · value measured</small></div>
+    <div class="stair"><b>Build</b><span>One change, in daily use</span><small>✓ progress verified · value measured</small></div>
+    <div class="stair"><b>Focus</b><span>Your purpose, your situation, the step worth taking</span><small>✓ agreed in writing</small></div>
   </div>
 </div>
+
+<p class="fine">Technology has a way of taking center stage. New systems arrive with promises, absorb attention and budget, and deliver mixed results, while the work the organization exists to do waits. That pattern is older than AI, and AI makes it faster. The remedy is to keep the organization's purpose in the lead, bring in technology where it serves that purpose, and move in steps small enough to check and valuable enough to matter.</p>
+
+<section id="deliver">
+  <div class="sechead"><span class="label">What I deliver</span><h2>Progress you can see, in a direction you chose</h2></div>
+  <div class="cols four">
+    <div><h3>Goals</h3><p>Work that stays aimed at what the organization is for. Every engagement starts with your goals and measures each step against them, so progress is visible and the next step is clear.</p></div>
+    <div><h3>Convergence</h3><p>Change that comes together instead of drifting apart. As systems grow, the people responsible for them keep the ability to explain them, change them and judge whether a change made things better.</p></div>
+    <div><h3>People</h3><p>Your people doing the work they do best, with technology that takes the rest. New tools are adopted by the team that uses them, at a pace they can absorb, with their knowledge kept at the center.</p></div>
+    <div><h3>AI</h3><p>Most leaders are more concerned than excited: about falling behind, about alienating customers, about not seeing where the real value is, about systems nobody fully understands or controls. Each of these has a practical answer, and finding yours is part of the work.</p></div>
+  </div>
+</section>
 
 <section id="start">
   <div class="sechead"><span class="label">Where to start</span><h2>Three common situations</h2></div>
@@ -134,10 +153,10 @@ footer{border-top:1px solid var(--line);padding-top:20px;color:var(--muted);font
   <div class="sechead"><span class="label">Approach</span><h2>Why human-centered</h2>
   <p>Technology projects fail when the people responsible for them can no longer explain what is happening or judge whether a change made things better. AI makes this easier to fall into, because it produces work faster than people can absorb it. Every engagement is built to keep that understanding intact.</p></div>
   <ol class="steps">
-    <li><b>Understand</b>How the organization works now, in its own words.</li>
-    <li><b>Choose</b>One step small enough to check and valuable enough to matter.</li>
-    <li><b>Deliver</b>Build it, with the checks agreed before the work starts.</li>
-    <li><b>Measure</b>Compare the result with the goal, then decide the next step.</li>
+    <li><b>Focus</b>Your purpose, how the organization works now, and the step worth taking.</li>
+    <li><b>Build</b>One change, in daily use, with the checks agreed before work starts.</li>
+    <li><b>Verify</b>Compare the result with the goal, in terms your people can judge.</li>
+    <li><b>Grow</b>Extend what worked, on proven ground, and choose the next step.</li>
   </ol>
 </section>
 
